@@ -6,6 +6,7 @@
 
 ## Data Modifications
 
+- Add users
 - Add/Remove business
 - Update business information
 - Remove business
@@ -61,6 +62,18 @@
 
 Call the received action on click
 
+## Register user form
+
+### Show data
+
+- user field
+- password field
+- Register button
+
+### Get actions:
+
+Call the received action on click
+
 ## Footer
 
 ### Show data
@@ -96,12 +109,12 @@ Call the received action on click
 
 - The received business data including:
 
-  - Its name inside an h3
-  - Its picture
-  - Its slogan
-  - Its address
-  - Its adhesion date
-  - Its contact number
+  - It's name inside an h3
+  - It's picture
+  - It's slogan
+  - It's address
+  - It's adhesion date
+  - It's contact number
   - It's business image
 
 - An add edit business button (as administrator)
@@ -112,13 +125,14 @@ Call the received action on click
 
 - A create button with the received text
 - A form that receives the following text in its input fields:
-  - Its name inside an h3
-  - Its picture
-  - Its slogan
-  - Its address
-  - Its adhesion date
-  - Its contact number
-  - It's business image
+
+- business name
+- category
+- slogan
+- address
+- adhesion date
+- contact number
+- business image
 
 ### Get actions
 

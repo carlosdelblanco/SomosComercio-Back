@@ -1,13 +1,9 @@
-import "./App.css";
-
-function App() {
+const App = (): JSX.Element => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <span>Hellow world!</span>
-      </header>
+    <div className="container">
+      <span>Hellow world!</span>
     </div>
   );
-}
+};
 
 export default App;

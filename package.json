@@ -1,5 +1,5 @@
 {
-  "name": "base-redux-toolkit",
+  "name": "Somos Comercio Front",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -24,6 +24,7 @@
     "test": "react-scripts test --passWithNoTests",
     "eject": "react-scripts eject",
     "test:coverage": "react-scripts test --coverage --watchAll=false --passWithNoTests",
+    "test:dev": "react-scripts test --watchAll",
     "prepare": "husky install"
   },
   "eslintConfig": {

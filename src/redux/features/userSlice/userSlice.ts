@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { openModalPayload, userState } from "../../../types/types";
+import { OpenModalPayload, UserState } from "../../../types/types";
 
-const userInitialState: userState = {
+const userInitialState: UserState = {
   modal: {
     isOpen: false,
     feedbackMessage: "",
@@ -14,7 +14,7 @@ const userSlice = createSlice({
   name: "modal",
   initialState: userInitialState,
   reducers: {
-    openModal: (ui, action: PayloadAction<openModalPayload>) => ({
+    openModal: (ui, action: PayloadAction<OpenModalPayload>) => ({
       ...ui,
       modal: {
         isOpen: true,

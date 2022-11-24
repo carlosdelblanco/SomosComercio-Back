@@ -4,12 +4,12 @@ export interface ModalState {
   isError: boolean;
 }
 
-export interface userState {
+export interface UserState {
   modal: ModalState;
   isLoading: boolean;
 }
 
-export interface openModalPayload {
+export interface OpenModalPayload {
   feedbackMessage: string;
   isError: boolean;
 }

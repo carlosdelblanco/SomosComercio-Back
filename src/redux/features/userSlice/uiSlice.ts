@@ -33,7 +33,7 @@ const uiSlice = createSlice({
   },
 });
 
-export const userSliceReducer = uiSlice.reducer;
+export const uiSliceReducer = uiSlice.reducer;
 
 export const {
   openModal: openModalActionCreator,

@@ -11,12 +11,13 @@
     "@types/node": "^17.0.45",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",
-    "axios": "^1.2.0",
+    "axios": "^0.27.2",
     "font-awesome": "^4.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
     "react-scripts": "5.0.1",
+    "styled-components": "^5.3.6",
     "typescript": "^4.9.3",
     "web-vitals": "^2.1.4"
   },
@@ -48,7 +49,15 @@
     ]
   },
   "devDependencies": {
+    "@types/styled-components": "^5.1.26",
     "husky": "^8.0.0",
     "msw": "^0.49.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "!./src/index.tsx",
+      "!src/setupTests.ts",
+      "!src/reportWebVitals.ts"
+    ]
   }
 }

@@ -1,6 +1,6 @@
 export interface UserCredentials {
   username: string;
-  passsword: string;
+  password: string;
 }
 
 export interface UserRegisteredData extends UserCredentials {

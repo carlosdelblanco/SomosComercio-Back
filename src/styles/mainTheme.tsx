@@ -1,4 +1,6 @@
-const mainTheme = {
+import { DefaultTheme } from "styled-components";
+
+const mainTheme: DefaultTheme = {
   primaryColor: "#3793C2",
   filterTextColor: "#3793C2",
   primaryLetterColor: "#5A5B5C",

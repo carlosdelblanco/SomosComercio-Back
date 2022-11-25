@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { OpenModalPayload, UserState } from "../../../types/types";
+import { OpenModalPayload, uiState } from "../../../types/types";
 
-const uiInitialState: UserState = {
+const uiInitialState: uiState = {
   modal: {
     isOpen: false,
     feedbackMessage: "",

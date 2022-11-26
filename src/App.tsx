@@ -1,7 +1,9 @@
+import RegisterForm from "./components/RegisterForm/RegisterForm";
+
 const App = (): JSX.Element => {
   return (
     <div className="container">
-      <span>Somos Comercio</span>
+      <RegisterForm />
     </div>
   );
 };

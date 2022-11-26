@@ -1,5 +1,5 @@
 import mockInitialUiState from "../../../mocks/mockInitialUiState";
-import { OpenModalPayload, uiState } from "../../../types/types";
+import { OpenModalPayload, UiState } from "../../../types/types";
 import {
   closeModalActionCreator,
   openModalActionCreator,
@@ -9,7 +9,7 @@ import {
 describe("Given a function uiSlice", () => {
   describe("When receives an empty initial state and a modal with text 'Error' and isError 'true'", () => {
     test("Then it should return a new state with the received text and isError true", () => {
-      const currentState: uiState = mockInitialUiState;
+      const currentState: UiState = mockInitialUiState;
 
       const actionPayload: OpenModalPayload = {
         feedbackMessage: "Error",
@@ -18,7 +18,7 @@ describe("Given a function uiSlice", () => {
 
       const openModalAction = openModalActionCreator(actionPayload);
       const newUiState = uiSliceReducer(currentState, openModalAction);
-      const expectedUiState: uiState = {
+      const expectedUiState: UiState = {
         modal: {
           isOpen: true,
           feedbackMessage: "Error",
@@ -32,7 +32,7 @@ describe("Given a function uiSlice", () => {
   });
   describe("When it receives a current state isOpen true and a closemodal action", () => {
     test("Then it should return a new state isOpen = false", () => {
-      const currentuiState: uiState = {
+      const currentuiState: UiState = {
         modal: {
           isOpen: true,
           feedbackMessage: "Error",
@@ -40,7 +40,7 @@ describe("Given a function uiSlice", () => {
         },
         isLoading: false,
       };
-      const expectedUiState: uiState = mockInitialUiState;
+      const expectedUiState: UiState = mockInitialUiState;
       const closemodalAction = closeModalActionCreator;
       const newUiState = uiSliceReducer(currentuiState, closemodalAction);
 

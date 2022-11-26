@@ -12,7 +12,6 @@ const initialRegisterForm = {
 const RegisterForm = (): JSX.Element => {
   const { registerUser } = useUser();
   const [formData, setFormData] = useState(initialRegisterForm);
-  const minimumCharacters = 4;
 
   const handleFormChange = (
     event: React.ChangeEvent<HTMLInputElement>

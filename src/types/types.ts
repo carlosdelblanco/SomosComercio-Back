@@ -4,7 +4,7 @@ export interface ModalState {
   isError: boolean;
 }
 
-export interface uiState {
+export interface UiState {
   modal: ModalState;
   isLoading: boolean;
 }

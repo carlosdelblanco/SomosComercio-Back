@@ -1,17 +1,22 @@
 import { DefaultTheme } from "styled-components";
 
 const mainTheme: DefaultTheme = {
-  primaryColor: "#3793C2",
-  filterTextColor: "#3793C2",
-  primaryLetterColor: "#5A5B5C",
-  primaryLetterButtonColor: "#2B2A2D",
-  primaryFooterTextColor: "#B6BCBD",
-  backgroundFooterColor: "#2B2A2D",
-  mainItemTextColor: "#000",
-  changeImageMaincolor: "#3793C2",
-  modalTextMaincolor: "#3793C2",
-  errorButtonPageBackgroundcolor: "#D9D9D9",
-  errorButtonTextcolor: "#fff",
+  font: {
+    family: "source-sans",
+  },
+  colors: {
+    primaryColor: "#3793c2",
+    filterTextColor: "#3793c2",
+    primaryLetterColor: "#5a5b5c",
+    primaryLetterButtonColor: "#2b2a2d",
+    primaryFooterTextColor: "#b6bcbd",
+    backgroundFooterColor: "#2b2a2d",
+    mainItemTextColor: "#000",
+    changeImageMaincolor: "#3793c2",
+    modalTextMaincolor: "#3793c2",
+    errorButtonPageBackgroundcolor: "#d9d9d9",
+    errorButtonTextcolor: "#fff",
+  },
 };
 
 export default mainTheme;

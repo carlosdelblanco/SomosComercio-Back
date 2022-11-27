@@ -48,6 +48,7 @@ const RegisterForm = (): JSX.Element => {
           id="username"
           required
           autoComplete="off"
+          aria-label="username-input"
           onChange={handleFormChange}
         />
 
@@ -56,10 +57,11 @@ const RegisterForm = (): JSX.Element => {
         </label>
         <input
           className="register-form__field"
-          type="text"
-          id="username"
+          type="email"
+          id="email"
           required
           autoComplete="off"
+          aria-label="email-input"
           onChange={handleFormChange}
         />
 
@@ -68,8 +70,9 @@ const RegisterForm = (): JSX.Element => {
         </label>
         <input
           className="register-form__field"
-          type="text"
-          id="username"
+          type="password"
+          id="password"
+          aria-label="password-input"
           required
           autoComplete="off"
           onChange={handleFormChange}

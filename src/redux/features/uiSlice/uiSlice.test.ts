@@ -32,7 +32,7 @@ describe("Given a function uiSlice", () => {
   });
   describe("When it receives a current state isOpen true and a closemodal action", () => {
     test("Then it should return a new state isOpen = false", () => {
-      const currentuiState: UiState = {
+      const currentUiState: UiState = {
         modal: {
           isOpen: true,
           feedbackMessage: "Error",
@@ -42,7 +42,7 @@ describe("Given a function uiSlice", () => {
       };
       const expectedUiState: UiState = mockInitialUiState;
       const closemodalAction = closeModalActionCreator;
-      const newUiState = uiSliceReducer(currentuiState, closemodalAction);
+      const newUiState = uiSliceReducer(currentUiState, closemodalAction);
 
       expect(newUiState).toStrictEqual(expectedUiState);
     });

@@ -12,7 +12,7 @@ body{
   font-family: source-sans, sans-serif;
 }
 
-button:{
+button{
   cursor: pointer;
 }
 

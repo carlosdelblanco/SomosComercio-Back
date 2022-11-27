@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { UserRegisteredData } from "../../data/types";
 import useUser from "../../hooks/useUser";
+import Button from "../Button/Button";
 import RegisterFormStyled from "./RegisterFormStyled";
 
 const initialRegisterForm = {
@@ -77,6 +78,7 @@ const RegisterForm = (): JSX.Element => {
           autoComplete="off"
           onChange={handleFormChange}
         />
+        <Button text={"Registrarse"} type={"button"} />
       </div>
     </RegisterFormStyled>
   );

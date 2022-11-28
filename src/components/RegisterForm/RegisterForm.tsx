@@ -23,7 +23,7 @@ const RegisterForm = (): JSX.Element => {
     });
   };
 
-  const handleSubmit = (event: React.SyntheticEvent) => {
+  const handleSubmit = async (event: React.SyntheticEvent) => {
     event.preventDefault();
     const formDataToSubmit: UserRegisteredData = {
       username: formData.username,
@@ -31,7 +31,7 @@ const RegisterForm = (): JSX.Element => {
       email: formData.email,
     };
 
-    registerUser(formDataToSubmit);
+    await registerUser(formDataToSubmit);
   };
   return (
     <RegisterFormStyled
@@ -53,7 +53,7 @@ const RegisterForm = (): JSX.Element => {
           onChange={handleFormChange}
         />
 
-        <label className="register-form__label" htmlFor="username">
+        <label className="register-form__label" htmlFor="email">
           email
         </label>
         <input
@@ -66,7 +66,7 @@ const RegisterForm = (): JSX.Element => {
           onChange={handleFormChange}
         />
 
-        <label className="register-form__label" htmlFor="username">
+        <label className="register-form__label" htmlFor="password">
           Password
         </label>
         <input
@@ -78,7 +78,7 @@ const RegisterForm = (): JSX.Element => {
           autoComplete="off"
           onChange={handleFormChange}
         />
-        <Button text={"Registrarse"} type={"button"} />
+        <Button text={"Registrarse"} />
       </div>
     </RegisterFormStyled>
   );

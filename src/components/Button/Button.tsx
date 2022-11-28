@@ -4,17 +4,12 @@ interface ButtonProps {
   text: string;
   action?: () => void;
   isDisabled?: boolean;
-  type: "button" | "submit";
+  onSubmit?: React.FormEventHandler<HTMLButtonElement>;
 }
 
-const Button = ({
-  text,
-  action,
-  isDisabled: isDisable,
-  type,
-}: ButtonProps): JSX.Element => {
+const Button = ({ text, action, onSubmit }: ButtonProps): JSX.Element => {
   return (
-    <ButtonStyled onClick={action} type={type}>
+    <ButtonStyled onSubmit={onSubmit} onClick={action}>
       {text}
     </ButtonStyled>
   );

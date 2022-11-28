@@ -6,7 +6,7 @@ const ButtonStyled = styled.button`
   align-items: center;
   margin: 0 auto;
   gap: 30px;
-  //max-width: 450px;
+  max-width: 450px;
   font-family: ${(props) => props.theme.font.family};
   background-color: ${(props) => props.theme.colors.primaryColor};
   border-radius: 4px;

@@ -1,13 +1,12 @@
-import { ReactComponent as Logo } from "../../media/somoscomercio.svg";
 import HeaderStyled from "./HeaderStyled";
 
 const Header = (): JSX.Element => {
   return (
     <HeaderStyled>
-      <Logo
+      <img
         className="header__logo"
-        aria-label="Somos Comercio"
-        data-testid="logo"
+        src="/media/somoscomercio.png"
+        alt="Somos Comercio"
         width="200"
       />
     </HeaderStyled>

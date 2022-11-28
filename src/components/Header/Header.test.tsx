@@ -7,6 +7,7 @@ import Header from "./Header";
 describe("Given a Header component", () => {
   describe("When it's rendered with an svg format image with the label 'logo'", () => {
     test("Then it should show the image", () => {
+      const expectedText = "Somos Comercio";
       render(
         <BrowserRouter>
           <Provider store={store}>
@@ -15,7 +16,7 @@ describe("Given a Header component", () => {
         </BrowserRouter>
       );
 
-      const logo = screen.queryByTestId("logo");
+      const logo = screen.queryByAltText(expectedText);
 
       expect(logo).toBeInTheDocument();
     });

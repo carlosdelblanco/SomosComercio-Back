@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { UserRegisteredData } from "../../data/types";
 import useUser from "../../hooks/useUser";
+import Button from "../Button/Button";
 import RegisterFormStyled from "./RegisterFormStyled";
 
 const initialRegisterForm = {
@@ -22,7 +23,7 @@ const RegisterForm = (): JSX.Element => {
     });
   };
 
-  const handleSubmit = (event: React.SyntheticEvent) => {
+  const handleSubmit = async (event: React.SyntheticEvent) => {
     event.preventDefault();
     const formDataToSubmit: UserRegisteredData = {
       username: formData.username,
@@ -30,7 +31,7 @@ const RegisterForm = (): JSX.Element => {
       email: formData.email,
     };
 
-    registerUser(formDataToSubmit);
+    await registerUser(formDataToSubmit);
   };
   return (
     <RegisterFormStyled
@@ -48,32 +49,36 @@ const RegisterForm = (): JSX.Element => {
           id="username"
           required
           autoComplete="off"
+          aria-label="username-input"
           onChange={handleFormChange}
         />
 
-        <label className="register-form__label" htmlFor="username">
+        <label className="register-form__label" htmlFor="email">
           email
         </label>
         <input
           className="register-form__field"
-          type="text"
-          id="username"
+          type="email"
+          id="email"
           required
           autoComplete="off"
+          aria-label="email-input"
           onChange={handleFormChange}
         />
 
-        <label className="register-form__label" htmlFor="username">
+        <label className="register-form__label" htmlFor="password">
           Password
         </label>
         <input
           className="register-form__field"
-          type="text"
-          id="username"
+          type="password"
+          id="password"
+          aria-label="password-input"
           required
           autoComplete="off"
           onChange={handleFormChange}
         />
+        <Button text={"Registrarse"} />
       </div>
     </RegisterFormStyled>
   );

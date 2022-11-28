@@ -1,4 +1,3 @@
-import "@fontscource/source-sans";
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`

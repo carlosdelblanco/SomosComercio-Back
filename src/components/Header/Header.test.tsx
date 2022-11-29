@@ -5,7 +5,7 @@ import { store } from "../../redux/store";
 import Header from "./Header";
 
 describe("Given a Header component", () => {
-  describe("When it's rendered with an svg format image with the label 'logo'", () => {
+  describe("When it's rendered with a png format image with the label 'logo'", () => {
     test("Then it should show the image", () => {
       const expectedText = "Somos Comercio";
       render(

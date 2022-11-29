@@ -6,8 +6,6 @@ const apiUrl = process.env.REACT_APP_API_URL;
 export const handlers = [
   rest.post(`${apiUrl}users/signup`, async (req, res, ctx) => {
     const user = await req.json<UserCredentials>();
-
-    const { username } = user;
     return res.once(ctx.status(201), ctx.json({ user }));
   }),
 

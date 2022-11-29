@@ -7,7 +7,7 @@ import {
 describe("Given a businessReducer", () => {
   describe("When it is invoked with it's method loadAllBusiness", () => {
     test("Then it should show the list of business", () => {
-      const loadContacts = loadAllBusinessActionCreator([
+      const loadBusiness = loadAllBusinessActionCreator([
         {
           businessName: "Optica San antonio",
           category: "Salud",
@@ -33,7 +33,7 @@ describe("Given a businessReducer", () => {
           },
         ],
       };
-      const newState = businessReducer(initialState, loadContacts);
+      const newState = businessReducer(initialState, loadBusiness);
 
       expect(newState).toStrictEqual(expectedState);
     });

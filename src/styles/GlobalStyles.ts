@@ -1,6 +1,7 @@
+import "@fontsource/source-sans-3";
 import { createGlobalStyle } from "styled-components";
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
 
 *{
   box-sizing: border-box;
@@ -8,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
 
 html,
 body{
-  font-family: source-sans, sans-serif;
+  font-family: "Source Sans 3", sans-serif;
 }
 
 button{
@@ -20,4 +21,4 @@ p,h1,h2,h3{
 }
 
 `;
-export default GlobalStyle;
+export default GlobalStyles;

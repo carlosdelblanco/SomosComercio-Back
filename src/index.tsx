@@ -4,8 +4,8 @@ import { Provider } from "react-redux";
 import { ThemeProvider } from "styled-components";
 import { store } from "../src/redux/store";
 import App from "./App";
-import "./index.css";
 import reportWebVitals from "./reportWebVitals";
+import GlobalStyles from "./styles/GlobalStyles";
 import mainTheme from "./styles/mainTheme";
 
 const container = document.getElementById("root")!;
@@ -15,6 +15,7 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <ThemeProvider theme={mainTheme}>
+        <GlobalStyles />
         <App />
       </ThemeProvider>
     </Provider>

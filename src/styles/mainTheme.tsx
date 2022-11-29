@@ -2,7 +2,7 @@ import { DefaultTheme } from "styled-components";
 
 const mainTheme: DefaultTheme = {
   font: {
-    family: "source-sans",
+    family: "Source Sans 3",
   },
   colors: {
     primaryColor: "#3793c2",

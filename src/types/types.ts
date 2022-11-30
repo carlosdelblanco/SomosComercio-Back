@@ -23,3 +23,9 @@ export interface Business {
   contactNumber: string;
   businessImage: string;
 }
+
+export interface JwtCustomPayload {
+  id: string;
+  username: string;
+  accesstoken: string;
+}

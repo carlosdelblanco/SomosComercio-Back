@@ -5,6 +5,7 @@ import React, { PropsWithChildren } from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
+import { businessReducer } from "../redux/features/businessSlice/businessSlice";
 import { uiSliceReducer } from "../redux/features/uiSlice/uiSlice";
 import { RootState, store } from "../redux/store";
 import GlobalStyle from "../styles/GlobalStyles";
@@ -22,6 +23,7 @@ export const renderWithProviders = (
     store = configureStore({
       reducer: {
         uiReducer: uiSliceReducer,
+        businessReducer: businessReducer,
       },
       preloadedState,
     }),

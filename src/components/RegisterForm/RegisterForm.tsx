@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { UserRegisteredData } from "../../data/types";
-import useUser from "../../hooks/useUser";
+import useUser from "../../hooks/useUser/useUser";
 import Button from "../Button/Button";
 import RegisterFormStyled from "./RegisterFormStyled";
 

@@ -1,8 +1,8 @@
 import axios, { AxiosError } from "axios";
-import { UserRegisteredData } from "../data/types";
-import { openModalActionCreator } from "../redux/features/uiSlice/uiSlice";
-import { useAppDispatch } from "../redux/hooks";
-import { AxiosResponseBody } from "./types";
+import { UserRegisteredData } from "../../data/types";
+import { openModalActionCreator } from "../../redux/features/uiSlice/uiSlice";
+import { useAppDispatch } from "../../redux/hooks";
+import { AxiosResponseBody } from "../types";
 
 const apiUrl = process.env.REACT_APP_API_URL;
 

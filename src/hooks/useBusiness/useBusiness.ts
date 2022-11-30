@@ -12,7 +12,6 @@ const useBusiness = () => {
   const loadAllBusiness = useCallback(async () => {
     try {
       const response = await axios.get(`${apiUrl}/business`);
-      debugger;
       dispatch(loadAllBusinessActionCreator(response.data));
     } catch (error: unknown) {
       dispatch(

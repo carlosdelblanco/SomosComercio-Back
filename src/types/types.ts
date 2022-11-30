@@ -27,4 +27,5 @@ export interface Business {
 export interface JwtCustomPayload {
   id: string;
   username: string;
+  accesstoken: string;
 }

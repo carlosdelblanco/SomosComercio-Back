@@ -28,6 +28,11 @@ const BusinessCardStyled = styled.form`
     font-size: 24px;
     line-height: 2;
   }
+
+  .business-card__info {
+    display: block;
+    font-size: 18px;
+  }
 `;
 
 export default BusinessCardStyled;

@@ -1,15 +1,11 @@
+import { Business } from "../../types/types";
 import BusinessCardStyled from "./BusinessCardStyled";
 
 interface BusinessCardProps {
-  businessName: string;
-  slogan: string;
-  address: string;
-  adhesionDate: string;
-  contactNumber: string;
-  businessImage: string;
+  business: Business;
 }
 
-const BusinessCard = (business: BusinessCardProps): JSX.Element => {
+const BusinessCard = ({ business }: BusinessCardProps): JSX.Element => {
   const {
     businessName,
     slogan,
@@ -22,10 +18,12 @@ const BusinessCard = (business: BusinessCardProps): JSX.Element => {
     <BusinessCardStyled>
       <article className="business-card__container">
         <h2 className="business-card__businessName">{businessName}</h2>
-        <h3 className="business-card__slogan">{slogan}</h3>
-        <h3>Dirección: {address}</h3>
-        <h3>Fecha de adhesión: {adhesionDate}</h3>
-        <h3>Contacto: {contactNumber}</h3>
+        <span className="business-card__slogan">{slogan}</span>
+        <span className="business-card__info">Dirección: {address}</span>
+        <span className="business-card__info">
+          Fecha de adhesión: {adhesionDate}
+        </span>
+        <span className="business-card__info">Contacto: {contactNumber}</span>
         <img
           className="business-card__image"
           src={businessImage}

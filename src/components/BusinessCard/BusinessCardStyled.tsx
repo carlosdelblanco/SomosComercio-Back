@@ -15,13 +15,13 @@ const BusinessCardStyled = styled.form`
   }
 
   .business-card__image {
-    max-width: 100%;
+    max-width: 89%;
     height: auto;
     margin-top: 1rem;
   }
 
   .business-card__businessName {
-    font-size: 40px;
+    font-size: 36px;
   }
 
   .business-card__slogan {

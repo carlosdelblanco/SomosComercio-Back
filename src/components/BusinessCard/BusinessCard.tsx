@@ -31,7 +31,6 @@ const BusinessCard = (business: BusinessCardProps): JSX.Element => {
           src={businessImage}
           alt={businessName}
         />
-        <br />
       </article>
     </BusinessCardStyled>
   );

@@ -5,7 +5,7 @@ import BusinessCard from "../BusinessCard/BusinessCard";
 import BusinessCardListStyled from "./BusinessCardListStyled";
 
 const BusinessCardList = (): JSX.Element => {
-  const { business } = useAppSelector(({ businessReducer }) => businessReducer);
+  const { business } = useAppSelector((state) => state.businessReducer);
   const { loadAllBusiness } = useBusiness();
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const BusinessCardList = (): JSX.Element => {
   return (
     <BusinessCardListStyled>
       {business.map((business) => (
-        <BusinessCard business={business} />
+        <BusinessCard key={business.id} business={business} />
       ))}
     </BusinessCardListStyled>
   );

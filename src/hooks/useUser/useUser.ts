@@ -11,7 +11,7 @@ const useUser = () => {
 
   const registerUser = async (registerData: UserRegisteredData) => {
     try {
-      await axios.post(`${apiUrl}users/signup`, registerData);
+      await axios.post(`${apiUrl}/users/signup`, registerData);
       dispatch(
         openModalActionCreator({
           isError: false,

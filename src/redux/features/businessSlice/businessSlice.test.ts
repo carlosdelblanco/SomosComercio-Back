@@ -9,6 +9,7 @@ describe("Given a businessReducer", () => {
     test("Then it should show the list of business", () => {
       const loadBusiness = loadAllBusinessActionCreator([
         {
+          id: "1",
           businessName: "Optica San antonio",
           category: "Salud",
           slogan: "Desde 1978",
@@ -23,6 +24,7 @@ describe("Given a businessReducer", () => {
       const expectedState = {
         business: [
           {
+            id: "1",
             businessName: "Optica San antonio",
             category: "Salud",
             slogan: "Desde 1978",

@@ -5,7 +5,6 @@ const App = (): JSX.Element => {
   return (
     <div className="container">
       <Header />
-
       <BusinessCardList />
     </div>
   );

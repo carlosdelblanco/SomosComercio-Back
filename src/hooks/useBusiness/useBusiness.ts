@@ -12,7 +12,7 @@ const useBusiness = () => {
   const loadAllBusiness = useCallback(async () => {
     try {
       const response = await axios.get(`${apiUrl}/business/loadAllBusiness`);
-      dispatch(loadAllBusinessActionCreator(response.data));
+      dispatch(loadAllBusinessActionCreator(response.data.business));
     } catch (error: unknown) {
       dispatch(
         openModalActionCreator({

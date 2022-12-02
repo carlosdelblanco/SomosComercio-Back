@@ -15,6 +15,7 @@ export interface OpenModalPayload {
 }
 
 export interface Business {
+  id: string;
   businessName: string;
   category: string;
   slogan: string;

@@ -1,17 +1,17 @@
 import styled from "styled-components";
 
 const HeaderStyled = styled.header`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
   .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-    gap: 30px;
-    max-width: 450px;
   }
 
   .header__logo {
-    background-color: red;
+  }
+
+  .header__registrar {
+    color: #3793c2;
   }
 `;
 

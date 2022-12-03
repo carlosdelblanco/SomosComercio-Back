@@ -1,28 +1,29 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Business } from "../../../types/types";
+import { Business, BusinessState } from "./types";
 
-interface BusinessState {
-  business: Business[];
-}
-export const BusinesssInitialState: BusinessState = {
-  business: [],
+export const BusinessInitialState: BusinessState = {
+  businessList: [],
 };
 
 const businessSlice = createSlice({
   name: "business",
-  initialState: BusinesssInitialState,
+  initialState: BusinessInitialState,
   reducers: {
-    loadAllBusiness: (initialState, action: PayloadAction<Business[]>) => ({
-      ...initialState,
-      business: [...action.payload],
+    loadAllBusiness: (
+      currentBusinessState,
+      action: PayloadAction<Business[]>
+    ) => ({
+      ...currentBusinessState,
+      businessList: [...action.payload],
     }),
-    deleteBusiness: (initialState, action: PayloadAction<string>) => ({
-      ...initialState,
-      business: [
-        ...initialState.business.filter(
-          (business) => business.id !== action.payload
-        ),
-      ],
+    deleteBusiness: (
+      currentBusinessState: BusinessState,
+      action: PayloadAction<string>
+    ) => ({
+      ...currentBusinessState,
+      businessList: currentBusinessState.businessList.filter(
+        (business) => business.id !== action.payload
+      ),
     }),
   },
 });

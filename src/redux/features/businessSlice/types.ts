@@ -1,4 +1,5 @@
 export interface Business {
+  id: string;
   businessName: string;
   category: string;
   slogan: string;
@@ -7,8 +8,6 @@ export interface Business {
   contactNumber: string;
   businessImage: string;
 }
-
-export type Businesses = Business[];
 
 export interface BusinessState {
   businessList: Business[];

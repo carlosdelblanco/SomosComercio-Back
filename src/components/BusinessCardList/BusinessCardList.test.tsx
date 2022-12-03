@@ -16,7 +16,7 @@ describe("Given a business list", () => {
             },
             isLoading: false,
           },
-          businessReducer: { businesses: mockBusinessCardList },
+          businessReducer: { businessList: mockBusinessCardList },
         },
       });
 

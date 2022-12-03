@@ -5,7 +5,7 @@ import BusinessCard from "../BusinessCard/BusinessCard";
 import BusinessCardListStyled from "./BusinessCardListStyled";
 
 const BusinessCardList = (): JSX.Element => {
-  const { businesses: business } = useAppSelector(
+  const { businessList: business } = useAppSelector(
     (state) => state.businessReducer
   );
   const { loadAllBusiness } = useBusiness();

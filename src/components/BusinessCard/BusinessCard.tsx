@@ -1,4 +1,4 @@
-import { Business } from "../../types/types";
+import { Business } from "../../redux/features/businessSlice/types";
 import BusinessCardStyled from "./BusinessCardStyled";
 
 interface BusinessCardProps {

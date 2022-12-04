@@ -1,6 +1,7 @@
 import { renderHook } from "@testing-library/react";
 import { mockBusinessCardListItems } from "../../mocks/mockBusinessCard";
 import ProviderWrapper from "../../mocks/providerWrapper";
+import { deleteBusinessActionCreator } from "../../redux/features/businessSlice/businessSlice";
 import { store } from "../../redux/store";
 import useBusiness from "./useBusiness";
 
@@ -48,15 +49,12 @@ describe("Given a useBusiness hook", () => {
       });
 
       const { id } = mockBusinessCardListItems[0];
-      //const id = "12345";
 
       await deleteBusiness(id);
-      //await deleteBusiness(id);
 
-      expect(dispatchSpy).toBeCalled();
-
-      // expect(dispatchSpy).toHaveBeenLastCalledWith(deleteBusinessActionCreator(testBusinessId as string)
-      //);
+      expect(dispatchSpy).toHaveBeenCalledWith(
+        deleteBusinessActionCreator(id as string)
+      );
     });
   });
 });

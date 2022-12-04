@@ -1,8 +1,12 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { useCallback } from "react";
-import { loadAllBusinessActionCreator } from "../../redux/features/businessSlice/businessSlice";
+import {
+  deleteBusinessActionCreator,
+  loadAllBusinessActionCreator,
+} from "../../redux/features/businessSlice/businessSlice";
 import { openModalActionCreator } from "../../redux/features/uiSlice/uiSlice";
 import { useAppDispatch } from "../../redux/hooks";
+import { AxiosResponseBody } from "../types";
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
@@ -22,7 +26,29 @@ const useBusiness = () => {
       );
     }
   }, [dispatch]);
-  return { loadAllBusiness };
+
+  const deleteBusiness = async (businessId: string) => {
+    try {
+      await axios.delete(`${apiUrl}/business/deleteBusiness/:businessId`);
+      dispatch(deleteBusinessActionCreator(businessId));
+      dispatch(
+        openModalActionCreator({
+          isError: false,
+          feedbackMessage: "El negocio ha sido eliminado",
+        })
+      );
+    } catch (error: unknown) {
+      dispatch(
+        openModalActionCreator({
+          isError: true,
+          feedbackMessage: (error as AxiosError<AxiosResponseBody>).response
+            ?.data.error!,
+        })
+      );
+    }
+  };
+
+  return { loadAllBusiness, deleteBusiness };
 };
 
 export default useBusiness;

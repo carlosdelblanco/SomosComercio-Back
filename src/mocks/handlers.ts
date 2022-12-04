@@ -50,4 +50,11 @@ export const handlers = [
       );
     }
   ),
+
+  rest.delete(
+    `${apiUrl}/business/deleteBusiness/:id`,
+    async (req, res, ctx) => {
+      return res.once(ctx.status(200));
+    }
+  ),
 ];

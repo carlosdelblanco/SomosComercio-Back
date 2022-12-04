@@ -1,4 +1,5 @@
 import { renderHook } from "@testing-library/react";
+import { mockBusinessCardListItems } from "../../mocks/mockBusinessCard";
 import ProviderWrapper from "../../mocks/providerWrapper";
 import { store } from "../../redux/store";
 import useBusiness from "./useBusiness";
@@ -45,11 +46,12 @@ describe("Given a useBusiness hook", () => {
       } = renderHook(() => useBusiness(), {
         wrapper: ProviderWrapper,
       });
-      //const { id: testBusinessId } = mockBusinessCardListItems[0];
-      const id = "12345";
 
-      //await deleteBusiness(testBusinessId as string);
+      const { id } = mockBusinessCardListItems[0];
+      //const id = "12345";
+
       await deleteBusiness(id);
+      //await deleteBusiness(id);
 
       expect(dispatchSpy).toBeCalled();
 

@@ -1,7 +1,9 @@
 import { rest } from "msw";
 import { UserCredentials } from "../data/types";
+import { mockBusinessCardListItems } from "./mockBusinessCard";
 
 const apiUrl = process.env.REACT_APP_API_URL;
+const { id } = mockBusinessCardListItems[0];
 
 export const handlers = [
   rest.post(`${apiUrl}/users/signup`, async (req, res, ctx) => {
@@ -48,6 +50,13 @@ export const handlers = [
           message: "No hay negocios para mostrar",
         })
       );
+    }
+  ),
+
+  rest.delete(
+    `${apiUrl}/business/deleteBusiness/:id`,
+    async (req, res, ctx) => {
+      return res.once(ctx.status(200));
     }
   ),
 ];

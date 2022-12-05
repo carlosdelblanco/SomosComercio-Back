@@ -2,6 +2,7 @@ import { renderHook } from "@testing-library/react";
 import { mockBusinessCardListItems } from "../../mocks/mockBusinessCard";
 import ProviderWrapper from "../../mocks/providerWrapper";
 import { deleteBusinessActionCreator } from "../../redux/features/businessSlice/businessSlice";
+import { openModalActionCreator } from "../../redux/features/uiSlice/uiSlice";
 import { store } from "../../redux/store";
 import useBusiness from "./useBusiness";
 
@@ -54,6 +55,28 @@ describe("Given a useBusiness hook", () => {
 
       expect(dispatchSpy).toHaveBeenCalledWith(
         deleteBusinessActionCreator(id as string)
+      );
+    });
+  });
+
+  describe("When it's method deleteBusiness is invoked and the request fails", () => {
+    test("Then it should invoke dispatch with openModalActionCreator with a custom error", async () => {
+      const {
+        result: {
+          current: { deleteBusiness },
+        },
+      } = renderHook(() => useBusiness(), {
+        wrapper: ProviderWrapper,
+      });
+      const { id: testBusinessId } = mockBusinessCardListItems[0];
+
+      await deleteBusiness(testBusinessId as string);
+
+      expect(dispatchSpy).toHaveBeenCalledWith(
+        openModalActionCreator({
+          isError: true,
+          feedbackMessage: "Business not found",
+        })
       );
     });
   });

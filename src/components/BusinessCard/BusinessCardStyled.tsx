@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const BusinessCardStyled = styled.form`
+const BusinessCardStyled = styled.li`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,6 +32,10 @@ const BusinessCardStyled = styled.form`
   .business-card__info {
     display: block;
     font-size: 18px;
+  }
+
+  .business-card__eliminar {
+    display: flex;
   }
 `;
 

@@ -1,4 +1,6 @@
+import useBusiness from "../../hooks/useBusiness/useBusiness";
 import { Business } from "../../redux/features/businessSlice/types";
+import Button from "../Button/Button";
 import BusinessCardStyled from "./BusinessCardStyled";
 
 interface BusinessCardProps {
@@ -7,6 +9,7 @@ interface BusinessCardProps {
 
 const BusinessCard = ({ business }: BusinessCardProps): JSX.Element => {
   const {
+    id,
     businessName,
     slogan,
     address,
@@ -14,6 +17,8 @@ const BusinessCard = ({ business }: BusinessCardProps): JSX.Element => {
     businessImage,
     contactNumber,
   } = business;
+
+  const { deleteBusiness } = useBusiness();
   return (
     <BusinessCardStyled>
       <article className="business-card__container">
@@ -24,6 +29,11 @@ const BusinessCard = ({ business }: BusinessCardProps): JSX.Element => {
           Fecha de adhesión: {adhesionDate}
         </span>
         <span className="business-card__info">Contacto: {contactNumber}</span>
+        <Button
+          text="Eliminar"
+          className="business-card__eliminar"
+          action={() => deleteBusiness(id)}
+        />
         <img
           className="business-card__image"
           src={businessImage}

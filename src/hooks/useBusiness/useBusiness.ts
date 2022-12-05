@@ -29,7 +29,7 @@ const useBusiness = () => {
 
   const deleteBusiness = async (businessId: string) => {
     try {
-      await axios.delete(`${apiUrl}/business/deleteBusiness/:businessId`);
+      await axios.delete(`${apiUrl}/business/deleteBusiness/${businessId}`);
       dispatch(deleteBusinessActionCreator(businessId));
       dispatch(
         openModalActionCreator({

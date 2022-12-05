@@ -1,4 +1,4 @@
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 import { useCallback } from "react";
 import {
   deleteBusinessActionCreator,
@@ -6,7 +6,6 @@ import {
 } from "../../redux/features/businessSlice/businessSlice";
 import { openModalActionCreator } from "../../redux/features/uiSlice/uiSlice";
 import { useAppDispatch } from "../../redux/hooks";
-import { AxiosResponseBody } from "../types";
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
@@ -29,7 +28,7 @@ const useBusiness = () => {
 
   const deleteBusiness = async (businessId: string) => {
     try {
-      await axios.delete(`${apiUrl}/business/deleteBusiness/:businessId`);
+      await axios.delete(`${apiUrl}/business/deleteBusiness/${businessId}`);
       dispatch(deleteBusinessActionCreator(businessId));
       dispatch(
         openModalActionCreator({
@@ -41,8 +40,7 @@ const useBusiness = () => {
       dispatch(
         openModalActionCreator({
           isError: true,
-          feedbackMessage: (error as AxiosError<AxiosResponseBody>).response
-            ?.data.error!,
+          feedbackMessage: "Business not found",
         })
       );
     }

@@ -1,9 +1,13 @@
-import { renderHook } from "@testing-library/react";
-import { mockBusinessCardListItems } from "../../mocks/mockBusinessCard";
+import { renderHook, waitFor } from "@testing-library/react";
+import { act } from "react-dom/test-utils";
+import mockBusinessCard, {
+  mockBusinessCardListItems,
+} from "../../mocks/mockBusinessCard";
 import ProviderWrapper from "../../mocks/providerWrapper";
 import { deleteBusinessActionCreator } from "../../redux/features/businessSlice/businessSlice";
 import { openModalActionCreator } from "../../redux/features/uiSlice/uiSlice";
 import { store } from "../../redux/store";
+import { OpenModalPayload } from "../../types/types";
 import useBusiness from "./useBusiness";
 
 const dispatchSpy = jest.spyOn(store, "dispatch");
@@ -77,6 +81,56 @@ describe("Given a useBusiness hook", () => {
           isError: true,
           feedbackMessage: "Business not found",
         })
+      );
+    });
+  });
+
+  describe("When it's method createBusiness is invoked with a correct business type", () => {
+    test("Then it should invoke dispatch with openModalActionCreator including 'Negocio añadido a la plataforma'", async () => {
+      const {
+        result: {
+          current: { createBusiness },
+        },
+      } = renderHook(() => useBusiness(), {
+        wrapper: ProviderWrapper,
+      });
+      const newBusiness = mockBusinessCard;
+      const payloadFeedback: OpenModalPayload = {
+        isError: false,
+        feedbackMessage: "Negocio añadido a la plataforma",
+      };
+
+      await act(async () => await createBusiness(newBusiness));
+
+      await waitFor(() =>
+        expect(dispatchSpy).toHaveBeenCalledWith(
+          openModalActionCreator(payloadFeedback)
+        )
+      );
+    });
+  });
+
+  describe("When it's method createBusiness is invoked and rejects it", () => {
+    test("Then it should invoke dispatch with openModalActionCreator with text 'Unable to add business'", async () => {
+      const {
+        result: {
+          current: { createBusiness },
+        },
+      } = renderHook(() => useBusiness(), {
+        wrapper: ProviderWrapper,
+      });
+      const newBusiness = mockBusinessCard;
+      const payloadFeedback: OpenModalPayload = {
+        isError: true,
+        feedbackMessage: "Unable to add business",
+      };
+
+      await act(async () => await createBusiness(newBusiness));
+
+      await waitFor(() =>
+        expect(dispatchSpy).toHaveBeenCalledWith(
+          openModalActionCreator(payloadFeedback)
+        )
       );
     });
   });

@@ -8,7 +8,7 @@ const Layout = (): JSX.Element => {
     <LayoutStyled>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="create" element={<CreateBusinessPage />} />
+        <Route path="/create" element={<CreateBusinessPage />} />
       </Routes>
     </LayoutStyled>
   );

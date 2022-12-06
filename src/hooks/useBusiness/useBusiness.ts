@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   createBusinessActionCreator,
   deleteBusinessActionCreator,
@@ -13,6 +14,7 @@ const apiUrl = process.env.REACT_APP_API_URL;
 
 const useBusiness = () => {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const loadAllBusiness = useCallback(async () => {
     try {
@@ -59,6 +61,7 @@ const useBusiness = () => {
 
       dispatch(createBusinessActionCreator(businessData));
       dispatch(openModalActionCreator(confirmationMessage));
+      navigate("/");
     } catch (error: unknown) {
       dispatch(
         openModalActionCreator({

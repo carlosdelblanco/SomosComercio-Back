@@ -1,4 +1,3 @@
-import BusinessCardList from "./components/BusinessCardList/BusinessCardList";
 import Header from "./components/Header/Header";
 import Layout from "./components/Layout/Layout";
 
@@ -7,7 +6,6 @@ const App = (): JSX.Element => {
     <div className="container">
       <Header />
       <Layout />
-      <BusinessCardList />
     </div>
   );
 };

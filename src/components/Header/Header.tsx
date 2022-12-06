@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import HeaderStyled from "./HeaderStyled";
 
 const Header = (): JSX.Element => {
@@ -9,6 +10,8 @@ const Header = (): JSX.Element => {
         alt="Somos Comercio"
         width="200"
       />
+      <Link to={"/"}>Home</Link>
+      <Link to={"/create"}>Añadir comercio</Link>
     </HeaderStyled>
   );
 };

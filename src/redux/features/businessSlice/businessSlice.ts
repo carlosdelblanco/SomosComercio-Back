@@ -25,6 +25,10 @@ const businessSlice = createSlice({
         (business) => business.id !== action.payload
       ),
     }),
+    createBusiness: (initialState, action: PayloadAction<Business>) => ({
+      ...initialState,
+      businessList: [...initialState.businessList, action.payload],
+    }),
   },
 });
 
@@ -33,4 +37,5 @@ export const businessReducer = businessSlice.reducer;
 export const {
   loadAllBusiness: loadAllBusinessActionCreator,
   deleteBusiness: deleteBusinessActionCreator,
+  createBusiness: createBusinessActionCreator,
 } = businessSlice.actions;

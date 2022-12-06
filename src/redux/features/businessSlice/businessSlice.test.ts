@@ -1,6 +1,9 @@
 import { mockBusinessCardList as mockBusinessCardListItems } from "../../../mocks/mockBusinessCard";
+
+import mockBusinessCardReturn from "../../../mocks/mockBusinessCard";
 import {
   businessReducer,
+  createBusinessActionCreator,
   deleteBusinessActionCreator,
   loadAllBusinessActionCreator,
 } from "./businessSlice";
@@ -57,6 +60,27 @@ describe("Given a businessReducer", () => {
       );
 
       expect(newBusinessState).toStrictEqual(expectedBusinessState);
+    });
+  });
+
+  describe("When it's invoked with its reducer createBusiness reducer and a new business in its payload", () => {
+    test("Then it should return a new state with the received business added in it", () => {
+      const currentBusinessState: BusinessState = {
+        businessList: mockBusinessCardListItems,
+      };
+      const businessToCreate = mockBusinessCardReturn;
+
+      const expectedbusinessState: BusinessState = {
+        ...currentBusinessState,
+        businessList: [...currentBusinessState.businessList, businessToCreate],
+      };
+
+      const businessSliceState = businessReducer(
+        currentBusinessState,
+        createBusinessActionCreator(businessToCreate)
+      );
+
+      expect(businessSliceState).toStrictEqual(expectedbusinessState);
     });
   });
 });

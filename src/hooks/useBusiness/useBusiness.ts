@@ -1,9 +1,11 @@
 import axios from "axios";
 import { useCallback } from "react";
 import {
+  createBusinessActionCreator,
   deleteBusinessActionCreator,
   loadAllBusinessActionCreator,
 } from "../../redux/features/businessSlice/businessSlice";
+import { Business } from "../../redux/features/businessSlice/types";
 import { openModalActionCreator } from "../../redux/features/uiSlice/uiSlice";
 import { useAppDispatch } from "../../redux/hooks";
 
@@ -46,7 +48,27 @@ const useBusiness = () => {
     }
   };
 
-  return { loadAllBusiness, deleteBusiness };
+  const createBusiness = async (businessData: Business) => {
+    const confirmationMessage = {
+      isError: false,
+      feedbackMessage: "Negocio añadido a la plataforma",
+    };
+
+    try {
+      await axios.post(`${apiUrl}/business/create`, businessData);
+
+      dispatch(createBusinessActionCreator(businessData));
+      dispatch(openModalActionCreator(confirmationMessage));
+    } catch (error: unknown) {
+      dispatch(
+        openModalActionCreator({
+          isError: true,
+          feedbackMessage: "Unable to add business",
+        })
+      );
+    }
+  };
+  return { loadAllBusiness, deleteBusiness, createBusiness };
 };
 
 export default useBusiness;

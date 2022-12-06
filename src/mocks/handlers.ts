@@ -57,4 +57,12 @@ export const handlers = [
       return res.once(ctx.status(200));
     }
   ),
+
+  rest.post(`${apiUrl}/business/create`, async (req, res, ctx) => {
+    return res.once(ctx.status(201));
+  }),
+
+  rest.post(`${apiUrl}/business/create`, async (req, res, ctx) => {
+    return res.once(ctx.status(409));
+  }),
 ];

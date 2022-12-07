@@ -13,13 +13,16 @@ const BusinessCardStyled = styled.li`
 
   .business-card__container {
     margin: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   .business-card__image {
-    //height: auto;
     height: 200px;
-    width: 266px;
-    margin-top: 1rem;
+    width: 100%;
+    object-fit: cover;
+    padding: 10px 0;
   }
 
   .business-card__businessName {
@@ -34,12 +37,6 @@ const BusinessCardStyled = styled.li`
   .business-card__info {
     display: block;
     font-size: 18px;
-  }
-
-  .business-card__eliminar {
-    display: flex;
-    margin: 0;
-    margin-top: 0.5rem;
   }
 `;
 

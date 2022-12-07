@@ -42,96 +42,93 @@ const BusinessForm = (): JSX.Element => {
 
   return (
     <BusinessFormStyled onSubmit={handleSubmit}>
-      <div>
-        <div className="main-box">
-          <label htmlFor="businessName">Nombre de negocio</label>
-          <input
-            className="main-box_field"
-            type="text"
-            id="businessName"
-            autoComplete="off"
-            onChange={handleFormChange}
-            value={formData.businessName}
-            required
-          />
-        </div>
-
-        <div className="main-box">
-          <label htmlFor="category">Categoría</label>
-          <input
-            className="main-box_field"
-            type="text"
-            id="category"
-            autoComplete="off"
-            onChange={handleFormChange}
-            value={formData.category}
-            required
-          />
-        </div>
-
-        <div className="main-box">
-          <label htmlFor="slogan">slogan</label>
-          <input
-            className="main-box_field"
-            type="text"
-            id="slogan"
-            autoComplete="off"
-            onChange={handleFormChange}
-            value={formData.slogan}
-            required
-          />
-        </div>
-        <div className="main-box">
-          <label htmlFor="address">Dirección</label>
-          <input
-            className="main-box_field"
-            type="text"
-            id="address"
-            autoComplete="off"
-            onChange={handleFormChange}
-            value={formData.address}
-            required
-          />
-        </div>
-        <div className="main-box">
-          <label htmlFor="adhesionDate">Fecha de adhesión</label>
-          <input
-            className="main-box_field"
-            type="text"
-            id="adhesionDate"
-            autoComplete="off"
-            onChange={handleFormChange}
-            value={formData.adhesionDate}
-            required
-          />
-        </div>
-        <div className="main-box">
-          <label htmlFor="contactNumber">Contacto</label>
-          <input
-            className="main-box_field"
-            type="text"
-            id="contactNumber"
-            autoComplete="off"
-            onChange={handleFormChange}
-            value={formData.contactNumber}
-            required
-          />
-        </div>
-        <div className="main-box">
-          <label htmlFor="businessImage">Imagen</label>
-          <input
-            className="main-box_field"
-            type="text"
-            id="businessImage"
-            autoComplete="off"
-            onChange={handleFormChange}
-            value={formData.businessImage}
-            required
-          />
-        </div>
+      <div className="main-box">
+        <label htmlFor="businessName">Nombre de negocio</label>
+        <input
+          className="main-box_field"
+          type="text"
+          id="businessName"
+          autoComplete="off"
+          onChange={handleFormChange}
+          value={formData.businessName}
+          required
+        />
       </div>
-      <br />
-      <Button text="Crear negocio" action={() => {}} isDisabled={!isNotEmpty} />
+
+      <div className="main-box">
+        <label htmlFor="category">Categoría</label>
+        <input
+          className="main-box_field"
+          type="text"
+          id="category"
+          autoComplete="off"
+          onChange={handleFormChange}
+          value={formData.category}
+          required
+        />
+      </div>
+
+      <div className="main-box">
+        <label htmlFor="slogan">Slogan</label>
+        <input
+          className="main-box_field"
+          type="text"
+          id="slogan"
+          autoComplete="off"
+          onChange={handleFormChange}
+          value={formData.slogan}
+          required
+        />
+      </div>
+      <div className="main-box">
+        <label htmlFor="address">Dirección</label>
+        <input
+          className="main-box_field"
+          type="text"
+          id="address"
+          autoComplete="off"
+          onChange={handleFormChange}
+          value={formData.address}
+          required
+        />
+      </div>
+      <div className="main-box">
+        <label htmlFor="adhesionDate">Fecha de adhesión</label>
+        <input
+          className="main-box_field"
+          type="text"
+          id="adhesionDate"
+          autoComplete="off"
+          onChange={handleFormChange}
+          value={formData.adhesionDate}
+          required
+        />
+      </div>
+      <div className="main-box">
+        <label htmlFor="contactNumber">Contacto</label>
+        <input
+          className="main-box_field"
+          type="text"
+          id="contactNumber"
+          autoComplete="off"
+          onChange={handleFormChange}
+          value={formData.contactNumber}
+          required
+        />
+      </div>
+      <div className="main-box">
+        <label htmlFor="businessImage">Imagen</label>
+        <input
+          className="main-box_field"
+          type="text"
+          id="businessImage"
+          autoComplete="off"
+          onChange={handleFormChange}
+          value={formData.businessImage}
+          required
+        />
+      </div>
+      <Button text="Crear negocio" isDisabled={!isNotEmpty} className="" />
     </BusinessFormStyled>
   );
 };

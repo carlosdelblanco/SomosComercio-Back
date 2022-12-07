@@ -10,6 +10,7 @@ const GlobalStyles = createGlobalStyle`
 html,
 body{
   font-family: "Source Sans 3", sans-serif;
+  margin: 0 auto;
 }
 
 button{
@@ -18,6 +19,15 @@ button{
 
 p,h1,h2,h3{
   margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  text-decoration: none;
 }
 
 `;

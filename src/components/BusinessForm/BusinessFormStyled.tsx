@@ -1,14 +1,16 @@
 import styled from "styled-components";
 
 const BusinessFormStyled = styled.form`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+
   .main-box {
     display: flex;
     flex-direction: column;
     gap: 4px;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    margin-left: 10px;
-    margin-right: 10px;
   }
 
   .main-box_field {

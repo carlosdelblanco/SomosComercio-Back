@@ -9,6 +9,7 @@ const Header = (): JSX.Element => {
         src="/media/somoscomercio.png"
         alt="Somos Comercio"
         width="150"
+        height="100"
       />
       <div className="header-navigation">
         <Link to={"/"}>Home</Link>

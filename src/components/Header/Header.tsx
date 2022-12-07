@@ -10,8 +10,10 @@ const Header = (): JSX.Element => {
         alt="Somos Comercio"
         width="200"
       />
-      <Link to={"/"}>Home</Link>
-      <Link to={"/create"}>Añadir comercio</Link>
+      <div className="header-navigation">
+        <Link to={"/"}>Home</Link>
+        <Link to={"/create"}>Añadir comercio</Link>
+      </div>
     </HeaderStyled>
   );
 };

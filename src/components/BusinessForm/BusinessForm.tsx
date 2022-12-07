@@ -43,9 +43,10 @@ const BusinessForm = (): JSX.Element => {
   return (
     <BusinessFormStyled onSubmit={handleSubmit}>
       <div>
-        <div>
+        <div className="main-box">
           <label htmlFor="businessName">Nombre de negocio</label>
           <input
+            className="main-box_field"
             type="text"
             id="businessName"
             autoComplete="off"
@@ -55,9 +56,10 @@ const BusinessForm = (): JSX.Element => {
           />
         </div>
 
-        <div>
+        <div className="main-box">
           <label htmlFor="category">Categoría</label>
           <input
+            className="main-box_field"
             type="text"
             id="category"
             autoComplete="off"
@@ -67,9 +69,10 @@ const BusinessForm = (): JSX.Element => {
           />
         </div>
 
-        <div>
+        <div className="main-box">
           <label htmlFor="slogan">slogan</label>
           <input
+            className="main-box_field"
             type="text"
             id="slogan"
             autoComplete="off"
@@ -78,9 +81,10 @@ const BusinessForm = (): JSX.Element => {
             required
           />
         </div>
-        <div>
+        <div className="main-box">
           <label htmlFor="address">Dirección</label>
           <input
+            className="main-box_field"
             type="text"
             id="address"
             autoComplete="off"
@@ -89,9 +93,10 @@ const BusinessForm = (): JSX.Element => {
             required
           />
         </div>
-        <div>
+        <div className="main-box">
           <label htmlFor="adhesionDate">Fecha de adhesión</label>
           <input
+            className="main-box_field"
             type="text"
             id="adhesionDate"
             autoComplete="off"
@@ -100,9 +105,10 @@ const BusinessForm = (): JSX.Element => {
             required
           />
         </div>
-        <div>
+        <div className="main-box">
           <label htmlFor="contactNumber">Contacto</label>
           <input
+            className="main-box_field"
             type="text"
             id="contactNumber"
             autoComplete="off"
@@ -111,9 +117,10 @@ const BusinessForm = (): JSX.Element => {
             required
           />
         </div>
-        <div>
+        <div className="main-box">
           <label htmlFor="businessImage">Imagen</label>
           <input
+            className="main-box_field"
             type="text"
             id="businessImage"
             autoComplete="off"
@@ -123,6 +130,7 @@ const BusinessForm = (): JSX.Element => {
           />
         </div>
       </div>
+      <br />
       <Button text="Crear negocio" action={() => {}} isDisabled={!isNotEmpty} />
     </BusinessFormStyled>
   );

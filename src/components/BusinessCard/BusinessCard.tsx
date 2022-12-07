@@ -29,16 +29,18 @@ const BusinessCard = ({ business }: BusinessCardProps): JSX.Element => {
           Fecha de adhesión: {adhesionDate}
         </span>
         <span className="business-card__info">Contacto: {contactNumber}</span>
-        <Button
-          text="Eliminar"
-          className="business-card__eliminar"
-          action={() => deleteBusiness(id)}
-        />
         <img
           className="business-card__image"
           src={businessImage}
           alt={businessName}
         />
+        <div>
+          <Button
+            text="Eliminar"
+            className="business-card__eliminar"
+            action={() => deleteBusiness(id)}
+          />
+        </div>
       </article>
     </BusinessCardStyled>
   );

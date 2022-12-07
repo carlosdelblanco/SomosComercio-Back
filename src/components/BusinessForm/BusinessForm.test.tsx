@@ -23,7 +23,7 @@ describe("Given the BusinessForm component", () => {
         name: "Categoría",
       });
       const sloganInput = screen.queryByRole("textbox", {
-        name: "slogan",
+        name: "Slogan",
       });
       const addressInput = screen.queryByRole("textbox", {
         name: "Dirección",
@@ -64,7 +64,7 @@ describe("Given the BusinessForm component", () => {
       await userEvent.type(categoryInput, "Servicios");
 
       const sloganInput = screen.queryByRole("textbox", {
-        name: "slogan",
+        name: "Slogan",
       })!;
       await userEvent.type(sloganInput, "A su servicio");
 

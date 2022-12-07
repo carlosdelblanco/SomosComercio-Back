@@ -9,6 +9,7 @@ const BusinessCardStyled = styled.li`
   max-width: 450px;
   font-family: ${(props) => props.theme.font.family};
   color: ${(props) => props.theme.colors.mainItemTextColor};
+  border-bottom: 1px solid black;
 
   .business-card__container {
     margin: 10px;
@@ -36,6 +37,8 @@ const BusinessCardStyled = styled.li`
 
   .business-card__eliminar {
     display: flex;
+    margin: 0;
+    margin-top: 0.5rem;
   }
 `;
 

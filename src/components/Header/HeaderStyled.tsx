@@ -13,6 +13,11 @@ const HeaderStyled = styled.header`
   .header__registrar {
     color: #3793c2;
   }
+
+  .header-navigation {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export default HeaderStyled;

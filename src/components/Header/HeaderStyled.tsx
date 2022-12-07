@@ -4,6 +4,8 @@ const HeaderStyled = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  padding-left: 20px;
+  padding-right: 20px;
   .header {
   }
 
@@ -17,6 +19,10 @@ const HeaderStyled = styled.header`
   .header-navigation {
     display: flex;
     flex-direction: column;
+  }
+
+  a:visited {
+    color: #b6bcbd;
   }
 `;
 

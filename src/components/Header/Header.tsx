@@ -8,7 +8,7 @@ const Header = (): JSX.Element => {
         className="header__logo"
         src="/media/somoscomercio.png"
         alt="Somos Comercio"
-        width="200"
+        width="150"
       />
       <div className="header-navigation">
         <Link to={"/"}>Home</Link>

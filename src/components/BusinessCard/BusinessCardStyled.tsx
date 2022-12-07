@@ -16,8 +16,9 @@ const BusinessCardStyled = styled.li`
   }
 
   .business-card__image {
-    max-width: 89%;
-    height: auto;
+    //height: auto;
+    height: 200px;
+    width: 266px;
     margin-top: 1rem;
   }
 

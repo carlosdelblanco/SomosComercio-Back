@@ -5,7 +5,8 @@ const CreateBusinessPageStyled = styled.div`
   flex-direction: column;
 
   .header__main-title {
-    padding-left: 10px;
+    text-align: start;
+    padding: 20px;
   }
 `;
 

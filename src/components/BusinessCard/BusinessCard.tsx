@@ -34,13 +34,11 @@ const BusinessCard = ({ business }: BusinessCardProps): JSX.Element => {
           src={businessImage}
           alt={businessName}
         />
-        <div>
-          <Button
-            text="Eliminar"
-            className="business-card__eliminar"
-            action={() => deleteBusiness(id)}
-          />
-        </div>
+        <Button
+          text="Eliminar"
+          className="business-card__eliminar"
+          action={() => deleteBusiness(id)}
+        />
       </article>
     </BusinessCardStyled>
   );

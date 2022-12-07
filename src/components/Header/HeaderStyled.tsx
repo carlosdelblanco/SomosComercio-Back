@@ -4,12 +4,10 @@ const HeaderStyled = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding-left: 20px;
-  padding-right: 20px;
-  .header {
-  }
+  padding: 0 20px;
 
   .header__logo {
+    padding-top: 20px;
   }
 
   .header__registrar {
@@ -19,6 +17,13 @@ const HeaderStyled = styled.header`
   .header-navigation {
     display: flex;
     flex-direction: column;
+    color: #b6bcbd;
+    text-decoration: none;
+
+    .active {
+      color: #000;
+      text-decoration: underline;
+    }
   }
 
   a:visited {
